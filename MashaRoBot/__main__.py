@@ -73,17 +73,17 @@ telegram Group management with lots of features.
 buttons = [
     [
         InlineKeyboardButton(
-            text="➕ᴅᴅ Mᴇ ᴛᴏ Gʀᴏᴜᴘ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
+            text="➕ Aᴅᴅ Mᴇ ᴛᴏ Gʀᴏᴜᴘ ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
     ],
     [
-        InlineKeyboardButton(text="Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅs❔", callback_data="help_back"),
+        InlineKeyboardButton(text="🔐 Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅs❔", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="t.me/Thanimaibots"),
-        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ", url="t.me/Thanimaisupport"),
+        InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
+        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
     ],
     [
-        InlineKeyboardButton(text="💞 Dᴇᴠᴇʟᴏᴘᴇ 💖", callback_data="source_"
+        InlineKeyboardButton(text="♻️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
         ),
     ],
 ]
@@ -98,13 +98,13 @@ Commands available:
 × /help: Give's you this message.
 All commands can either be used with / OR !."""
 
-START_IMG = "https://telegra.ph/file/91d3a167481da71ab5b44.mp4"
-MASHA_IMG = "https://telegra.ph/file/7aba4b67279c844454b4c.jpg"
+START_IMG = "https://telegra.ph/file/f572fc2d6fc712763424a.jpg"
+MASHA_IMG = "https://telegra.ph/file/92d724a1fff667e898f87.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project via [Paypal](ko-fi.com/sawada) or by contacting @Sawada \
+ You can support the project via [Blaze](t.me/log_afk) or by contacting @evil_xD_boy \
  Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at @OnePunchDev."""
+ Those who cannot provide monetary support are welcome to help us develop the bot at @Official_Afk_xD."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -224,10 +224,10 @@ def start(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text="Sᴜᴘᴘᴏʀᴛ", url="https://t.me/thanimaisupport")
+                  InlineKeyboardButton(text="⚙️Sᴜᴘᴘᴏʀᴛ", url="https://t.me/UNIQUE_SOCIETY")
                   ],
                   [
-                  InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇs", url="https://t.me/thanimaibots")
+                  InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ🎇", url="https://t.me/the_blaze_network")
                   ]
                 ]
             ),
@@ -362,7 +362,7 @@ def Masha_about_callback(update, context):
     query = update.callback_query
     if query.data == "masha_":
         query.message.edit_text(
-            text=""" ℹ️ I'm *MASHA*, a powerful group management bot built to help you manage your group easily.
+            text=""" ℹ️ I'm *BLAZE*, a powerful group management bot built to help you manage your group easily.
                  \n❍ I can restrict users.
                  \n❍ I can greet users with customizable welcome messages and even set a group's rules.
                  \n❍ I have an advanced anti-flood system.
@@ -370,8 +370,8 @@ def Masha_about_callback(update, context):
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
                  \n\n_Masha's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](https://github.com/Mr-Dark-Prince/MashaRoBot).
-                 \n\nIf you have any question about Masha, let us know at @WasteBots.""",
+                 \nHere is the [💾Repository](https://t.me/Official_Afk_xD).
+                 \n\nIf you have any question about Blaze, let us know at @evil_xd_boy.""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -397,8 +397,8 @@ def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..🤗 I'm *Lonely king*
-                 \nMy source code is private  [support](t.me/thanimaisupport) .""",
+            text=""" Hi..🤗 I'm *</𝐎ғғɪᴄɪᴀʟ>𝐋ᴏɢ ✘ Ꭺғᴋ ✍「🇮🇳」*
+                 \nMy Sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ ɪs ᴘʀɪᴠᴀᴛᴇ  [⚙️Sᴜᴘᴘᴏʀᴛ](t.me/Unique_SOCIETY) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
