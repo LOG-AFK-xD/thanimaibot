@@ -84,6 +84,10 @@ buttons = [
       InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
   ],
   [
+      InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
+      InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
+  ],
+  [
       InlineKeyboardButton(text="♻️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
       ),
   ],
