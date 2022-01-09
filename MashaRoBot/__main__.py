@@ -77,6 +77,7 @@ buttons = [
     ],
     [
         InlineKeyboardButton(text="🔐 Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅs❔", callback_data="help_back"),
+        InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
     ],
     [
         InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
