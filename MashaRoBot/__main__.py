@@ -88,7 +88,7 @@ buttons = [
       InlineKeyboardButton(text="𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ 🎇", url="t.me/UNIQUE_SOCIETY"),
   ],
   [
-      InlineKeyboardButton(text="⚒️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
+      InlineKeyboardButton(text="⚒️ 𝐃ᴇᴠᴇʟᴏᴘᴇʀ 🔰", callback_data="source_"
       ),
   ],
 ]
