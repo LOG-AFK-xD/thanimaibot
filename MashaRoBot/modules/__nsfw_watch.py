@@ -116,4 +116,4 @@ Masha can protect your group from NSFW senders
  ❍ /rmnsfw*:* Removes The Group From nsfw Watch List
 """
 
-__mod_name__ = "ɴsғᴡ☠️"
+__mod_name__ = "Nsғᴡ ☠️"
