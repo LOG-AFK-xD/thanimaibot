@@ -64,7 +64,7 @@ PM_START_TEXT = """
 telegram Group management with lots of features.
 ───────────────────────
 × Uptime: 8days, 10h:36m:16s
-×  `{}` users, across `{}` chats..
+×  `{}` users, across `{}` chats `{}`..
 ───────────────────────
 ✪ Bot For help You Manage & Protect Your Groups.
 ➼ So What U Waiting For Add Me To Ur chat
@@ -73,22 +73,22 @@ telegram Group management with lots of features.
 buttons = [
   [
       InlineKeyboardButton(
-          text="➕ Aᴅᴅ Mᴇ ᴛᴏ Gʀᴏᴜᴘ ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
+          text="➕ 𝐀ᴅᴅ 𝐦ᴇ ᴛᴏ 𝐲𝐨𝐮𝐫 𝐆ʀᴏᴜᴘ ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
   ],
   [
-      InlineKeyboardButton(text="🔐Cᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
-      InlineKeyboardButton(text="Cʜᴀᴛ Zᴏɴᴇ🌉", url="t.me/All_Dear_COMRADE"),
+      InlineKeyboardButton(text="⚒️𝐂ᴍᴅ&𝐇ᴇʟᴘ", callback_data="help_back"),
+      InlineKeyboardButton(text="𝐒ᴜᴘᴘᴏʀᴛ⚙️", url="t.me/Blaze_Support"),
   ],
   [
-      InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
-      InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
+      InlineKeyboardButton(text="🔰𝐔ᴘᴅᴀᴛᴇ𝐬", url="t.me/THE_BLAZE_NETWORK"),
+      InlineKeyboardButton(text="𝐂ʜᴀᴛ 𝐙ᴏɴᴇ ✨", url="t.me/all_Dear_comrade"),
   ],
   [
-      InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
-      InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
+      InlineKeyboardButton(text="✨𝐅ɪɢʜᴛɪɴɢ 𝐂ʟᴜʙ", url="t.me/THE_BLAZE_FIGHTER"),
+      InlineKeyboardButton(text="𝐂ʜᴀᴛ 𝐆ʀᴏᴜᴘ 🎇", url="t.me/UNIQUE_SOCIETY"),
   ],
   [
-      InlineKeyboardButton(text="♻️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
+      InlineKeyboardButton(text="⚒️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
       ),
   ],
 ]
