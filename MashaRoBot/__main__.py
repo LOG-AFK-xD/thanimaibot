@@ -73,7 +73,7 @@ PM_START_TEXT = """
 buttons = [
   [
       InlineKeyboardButton(
-          text="➕ 𝐀ᴅᴅ 𝐦ᴇ ᴛᴏ 𝐲𝐨𝐮𝐫 𝐆ʀᴏᴜᴘ ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
+          text="➕ 𝐀ᴅᴅ 𝐦ᴇ ᴛᴏ 𝐲𝐨𝐮𝐫 𝐆ʀᴏᴜᴘ ➕", url="t.me/BLAZE_MUSIC_BOT?startgroup=true"),
   ],
   [
       InlineKeyboardButton(text="⚒️𝐂ᴍᴅ&𝐇ᴇʟᴘ", callback_data="help_back"),
