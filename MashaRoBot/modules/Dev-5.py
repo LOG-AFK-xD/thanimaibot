@@ -1,8 +1,8 @@
 __help__= f"""
 **ᴀʟʟ  ᴄʀᴇᴀᴅɪᴛs  ᴛᴏ 
-        @THETELEGRAMPRO
-         @Kittu_the_criminall
-          @Sarbudeen786**
+        @log_afk
+         @evil_xD_Boy
+          @Official_Afk_xD**
 """
 
 __mod_name__ = "ᴄʀᴇᴀᴅɪᴛs🤧"
