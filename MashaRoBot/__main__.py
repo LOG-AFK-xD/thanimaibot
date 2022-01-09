@@ -64,7 +64,7 @@ PM_START_TEXT = """
 telegram Group management with lots of features.
 ───────────────────────
 × Uptime: 8days, 10h:36m:16s
-×  `{}` users, across `{}` chats `{}`..
+×  `{}` users, across `{}` chats..
 ───────────────────────
 ✪ Bot For help You Manage & Protect Your Groups.
 ➼ So What U Waiting For Add Me To Ur chat
