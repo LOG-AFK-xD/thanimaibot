@@ -71,22 +71,22 @@ telegram Group management with lots of features.
 ───────────────────────
 """
 buttons = [
-    [
-        InlineKeyboardButton(
-            text="➕ Aᴅᴅ Mᴇ ᴛᴏ Gʀᴏᴜᴘ ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
-    ],
-    [
-        InlineKeyboardButton(text="🔐 Hᴇʟᴘ & Cᴏᴍᴍᴀɴᴅs❔", callback_data="help_back"),
-        InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
-    ],
-    [
-        InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
-        InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
-    ],
-    [
-        InlineKeyboardButton(text="♻️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
-        ),
-    ],
+  [
+      InlineKeyboardButton(
+          text="➕ Aᴅᴅ Mᴇ ᴛᴏ Gʀᴏᴜᴘ ➕", url="t.me/FINAL_STRIKER_BOT?startgroup=true"),
+  ],
+  [
+      InlineKeyboardButton(text="🔐Cᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
+      InlineKeyboardButton(text="Cʜᴀᴛ Zᴏɴᴇ🌉", url="t.me/All_Dear_COMRADE"),
+  ],
+  [
+      InlineKeyboardButton(text="⚙️ Sᴜᴘᴘᴏʀᴛ", url="t.me/UNIQUE_SOCIETY"),
+      InlineKeyboardButton(text="Uᴘᴅᴀᴛᴇ 🎇", url="t.me/THE_BLAZE_NETWORK"),
+  ],
+  [
+      InlineKeyboardButton(text="♻️ Dᴇᴠᴇʟᴏᴘᴇ 🔰", callback_data="source_"
+      ),
+  ],
 ]
 
 
