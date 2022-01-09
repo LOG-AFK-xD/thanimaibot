@@ -1,8 +1,8 @@
-__help__= f"""
-**ᴀʟʟ  ᴄʀᴇᴀᴅɪᴛs  ᴛᴏ 
+help= f"""
+ᴀʟʟ  Cʀᴇᴀᴅɪᴛs  ᴛᴏ 
         @log_afk
-         @evil_xD_Boy
-          @Official_Afk_xD**
+         @evil_xd_boy
+          @unknown_shadow_xD
 """
 
-__mod_name__ = "ᴄʀᴇᴀᴅɪᴛs🤧"
+mod_name = "Cʀᴇᴀᴅɪᴛs🤧"
