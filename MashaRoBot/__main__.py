@@ -90,13 +90,13 @@ buttons = [
     [
         InlineKeyboardButton(text="🚑 Support", url=f"https://t.me/BLAZE_SUPPORT"),
       InlineKeyboardButton(
-          text="Updates 📨", url=f"https://t.me/the_BLAZE_Network"
+          text="Updates 📢", url=f"https://t.me/the_BLAZE_Network"
       ),
   ],
   [
       InlineKeyboardButton(text="🔐 Help Cmd", callback_data="help_back"),
       InlineKeyboardButton(
-          text="Chitchat 🚑", url=f"https://t.me/UNIQUE_SOCIETY"
+          text="Chitchat 📨", url=f"https://t.me/UNIQUE_SOCIETY"
       ),
   ],
   [
