@@ -59,17 +59,14 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
-PM_START_TEXT = """ 
-☞ ✰Hᴇʟʟᴏ 𝐅ʀɪᴇɴᴅ𝐬..!
-𝐓ᴇʟᴇɢʀᴀᴍ 𝐆ʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ᴡɪᴛʜ ʟᴏᴛ𝐬 ᴏғ ғᴇᴀᴛᴜʀᴇ𝐬.
-───────────────────────
-× Uptime: 8days, 10h:36m:16s
-×  `{}` users, across `{}` chats..
-───────────────────────
-✪ 𝐁ᴏᴛ 𝐅ᴏʀ ʜᴇʟᴘ 𝐘ᴏᴜ 𝐌ᴀɴᴀɢᴇ & 𝐏ʀᴏᴛᴇᴄᴛ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ𝐬.
-➼ 𝐒ᴏ 𝐖ʜᴀᴛ 𝐔 𝐖ᴀɪᴛɪɴɢ 𝐅ᴏʀ 𝐀ᴅᴅ 𝐌ᴇ 𝐓ᴏ 𝐔ʀ ᴄʜᴀᴛ..
-───────────────────────
+PM_START_TEXT = """
+[🌈](https://telegra.ph/file/25f86eb9b2dcec425790f.jpg) ' ☞ ✰Hᴇʟʟᴏ... Fʀɪᴇɴᴅꜱ I'ᴍ' [✰🅷yᴩᴇʀᴍᴇɴ ✘ 🆁ᴏʙᴏᴛ✰](https://t.me/hypermen_rbot)
+────────────────────
+* I'ᴍ ᴀɴ Mᴜsɪᴄ + Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
+────────────────────
+✪ Hɪᴛ /help ᴛᴏ sᴇᴇ ᴍʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs.
 """
+
 buttons = [
   [
       InlineKeyboardButton(
