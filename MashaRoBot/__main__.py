@@ -59,16 +59,17 @@ def get_readable_time(seconds: int) -> str:
     return ping_time
 
 
+yurikorobot_IMG = "https://telegra.ph/file/21a7c5c3b87918ac464eb.jpg"
+
 PM_START_TEXT = """
-────「 [neko](https://telegra.ph/file/38559b4da168432999bb8.jpg) 」────
-*Hola! {},*
-*I am an Anime themed advance group management bot with a lot of Features.*
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-• *Uptime:* `{}`
-• `{}` *users, across* `{}` *chats.*
-• *thnx to @NekoXRobot for neko robot repo*
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ Try The Help Buttons Below To Know My Abilities ××
+➪ [🌈](https://telegra.ph/file/21a7c5c3b87918ac464eb.jpg) ' ☞ ✰Hello... Friends ─ 「[{}]」
+➪ *I'Am An Music + Managment Bot*
+➪ *Am Very Fast Awesome Features* 
+───────────────────────
+× *Uptime:* {}
+× {} *User, Across* {} *Chats.*
+───────────────────────
+⛦➪ *Thanks for useing my bots !*
 """
 
 buttons = [
