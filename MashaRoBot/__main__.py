@@ -58,7 +58,6 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
-
 yurikorobot_IMG = "https://telegra.ph/file/21a7c5c3b87918ac464eb.jpg"
 
 PM_START_TEXT = """
@@ -157,6 +156,8 @@ for module_name in ALL_MODULES:
 
     if hasattr(imported_module, "__user_settings__"):
         USER_SETTINGS[imported_module.__mod_name__.lower()] = imported_module
+
+
 
 
 # do not async
