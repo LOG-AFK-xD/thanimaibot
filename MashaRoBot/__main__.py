@@ -847,7 +847,7 @@ def main():
     settings_handler = CommandHandler("settings", get_settings)
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(yurikorobot_about_callback, pattern=r"yurikorobot_")
+    about_callback_handler = CallbackQueryHandler(Nao_about_callback, pattern=r"Nao_")
     source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
 
     donate_handler = CommandHandler("donate", donate)
