@@ -84,7 +84,7 @@ buttons = [
     [
         InlineKeyboardButton(text="🔰 Aʙᴏᴜᴛ ", callback_data="Nao_"),
         InlineKeyboardButton(
-            text="📝 Bᴀsɪᴄ Hᴇʟᴘ", callback_data="MashaRoBot_basichelp"
+            text="📝 Bᴀsɪᴄ Hᴇʟᴘ", callback_data="Nao_basichelp"
         ),
     ],
     [
