@@ -355,9 +355,9 @@ def help_button(update, context):
 
 
 @run_async
-def Nao_about_callback(update, context):
+def Masha_about_callback(update, context):
     query = update.callback_query
-    if query.data == "Nao_":
+    if query.data == "Masha_":
         query.message.edit_text(
             text=""" ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ
             \nHere's the basic help regarding use of Hypermen robot.
@@ -376,11 +376,11 @@ def Nao_about_callback(update, context):
                             text="✨ Uᴘᴅᴀᴛᴇ", url="t.me/HYPERMEN_UPDATES"
                         ),
                     ],
-                    [InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_back")],
+                    [InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Masha_back")],
                 ]
             ),
         )
-    elif query.data == "Nao_back":
+    elif query.data == "Masha_back":
         query.message.edit_text(
                 PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
@@ -389,7 +389,7 @@ def Nao_about_callback(update, context):
                 disable_web_page_preview=False,
         )
 
-    elif query.data == "Nao_basichelp":
+    elif query.data == "Masha_basichelp":
         query.message.edit_text(
             text=f"*Here's basic Help regarding* *How to use Me?*"
             f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
@@ -402,21 +402,21 @@ def Nao_about_callback(update, context):
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="Aᴅᴍɪɴs⏳", callback_data="Nao_admin"),
-                    InlineKeyboardButton(text="Nᴏᴛᴇs 📝", callback_data="Nao_notes"),
+                    InlineKeyboardButton(text="Aᴅᴍɪɴs⏳", callback_data="Masha_admin"),
+                    InlineKeyboardButton(text="Nᴏᴛᴇs 📝", callback_data="Masha_notes"),
                  ],
                  [
-                    InlineKeyboardButton(text="⚡ Sᴜᴘᴘᴏʀᴛ", callback_data="Nao_support"),
-                    InlineKeyboardButton(text="🧰 Cʀᴇᴅɪᴛs ", callback_data="Nao_credit"),
+                    InlineKeyboardButton(text="⚡ Sᴜᴘᴘᴏʀᴛ", callback_data="Masha_support"),
+                    InlineKeyboardButton(text="🧰 Cʀᴇᴅɪᴛs ", callback_data="Masha_credit"),
                  ],
                  [
-                    InlineKeyboardButton(text="🌹Bᴀᴄᴋ🌹", callback_data="Nao_back"),
+                    InlineKeyboardButton(text="🌹Bᴀᴄᴋ🌹", callback_data="Masha_back"),
                  
                  ]
                 ]
             ),
         )
-    elif query.data == "Nao_admin":
+    elif query.data == "Masha_admin":
         query.message.edit_text(
             text=f"*Let's make your group bit effective now*"
             f"\nCongragulations, HYPERMEN now ready to manage your group."
@@ -429,10 +429,10 @@ def Nao_about_callback(update, context):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="Nao_basichelp")]]
+                [[InlineKeyboardButton(text="Back", callback_data="Masha_basichelp")]]
             ),
         )
-    elif query.data == "Nao_notes":
+    elif query.data == "Masha_notes":
         query.message.edit_text(
             text=f"<b> Setting up notes</b>"
             f"\nYou can save message/media/audio or anything as notes"
@@ -440,10 +440,10 @@ def Nao_about_callback(update, context):
             f"\n\nYou can also set buttons for notes and filters (refer help menu)",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_basichelp")]]
+                [[InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Masha_basichelp")]]
             ),
         )
-    elif query.data == "Nao_support":
+    elif query.data == "Masha_support":
         query.message.edit_text(
             text="* Hypermen support chats*"
             "\nJoin Support Group/Channel",
@@ -459,14 +459,14 @@ def Nao_about_callback(update, context):
                     InlineKeyboardButton(text="Tғɴ Uᴘᴅᴀᴛᴇ", url="https://t.me/THE_FURIOUSNETWORK"),
                  ],
                  [
-                    InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_basichelp"),
+                    InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Masha_basichelp"),
                  
                  ]
                 ]
             ),
         )
 
-    elif query.data == "Nao_credit":
+    elif query.data == "Masha_credit":
         query.message.edit_text(
             text=f"💫 Credis for TFN\n"
             "\nHere Developers Making And Give Inspiration For Made The HypermenRobot",
@@ -491,10 +491,10 @@ def Nao_about_callback(update, context):
                  ],
                  [
                     InlineKeyboardButton(text="Nɪsʜᴀɴᴛ", url="https://t.me/NISHANTT_XD"),
-                    InlineKeyboardButton(text="Asʜ ᴋɪɴɢ", url="https://t.me/ROWDY_KING_N"),
+                    InlineKeyboardButton(text="Asʜ ᴋɪɴɢ", url="https://t.me/Official_afk_xD"),
                  ],
                  [
-                    InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_"),
+                    InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Masha_"),
                  ]
                 ]
             ),
@@ -507,7 +507,7 @@ def Source_about_callback(update, context):
     if query.data == "source_":
         query.message.edit_text(
             text=""" Hi.. there I'm *Hypermen Robot*
-                 \nHere is the [Source Code](https://t.me/TFN_FIGHTER) .""",
+                 \nHere is the [Source Code](https://t.me/BLAZE_SUPPORT) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
