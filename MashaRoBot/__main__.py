@@ -74,48 +74,48 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-────「 [neko](https://telegra.ph/file/38559b4da168432999bb8.jpg) 」────
-*Hola! {},*
-*I am an Anime themed advance group management bot with a lot of Features.*
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-• *Uptime:* `{}`
-• `{}` *users, across* `{}` *chats.*
-• *thnx to @NekoXRobot for neko robot repo*
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-➛ Try The Help Buttons Below To Know My Abilities ××
+[🌈](https://telegra.ph/file/284f82e6cda5d8acaeb24.jpg) ' ☞ ✰Hᴇʟʟᴏ... Fʀɪᴇɴᴅꜱ I'ᴍ' [✰🅷yᴩᴇʀᴍᴇɴ ✘ 🆁ᴏʙᴏᴛ✰](https://t.me/hypermen_rbot)
+────────────────────
+* I'ᴍ ᴀɴ Mᴜsɪᴄ + Mᴀɴᴀɢᴇᴍᴇɴᴛ Bᴏᴛ.*
+────────────────────
+✪ Hɪᴛ /help ᴛᴏ sᴇᴇ ᴍʏ ᴀᴠᴀɪʟᴀʙʟᴇ ᴄᴏᴍᴍᴀɴᴅs.
 """
-
 buttons = [
     [
-                        InlineKeyboardButton(
-                            text="Add Neko To Your Group",
-                            url="t.me/NekoXRobot?startgroup=true")
-                    ],
-                   [
-                       InlineKeyboardButton(text="[► Help ◄]", callback_data="help_back"),
-                       InlineKeyboardButton(text="[► Repo ◄]", url="https://GitHub.com/Hodacka/NekoRobot-2"),
-                       InlineKeyboardButton(text="[► Network ◄]", url="https://t.me/Yuki_Network"),
-                     ],
-                    [                  
-                       InlineKeyboardButton(
-                             text="Support",
-                             url="https://t.me/nekoxsupport"),
-                       InlineKeyboardButton(
-                             text="Updates",
-                             url="https://t.me/noha_updates")
-                     ], 
-    ]
-
-
+        InlineKeyboardButton(text="🔰 About Me", callback_data="Nao_"),
+        InlineKeyboardButton(
+            text="Basic help ❔", callback_data="Nao_basichelp"
+        ),
+    ],
+    [
+        InlineKeyboardButton(text="🚑 Support", url=f"https://t.me/BLAZE_SUPPORT"),
+      InlineKeyboardButton(
+          text="Updates 📨", url=f"https://t.me/the_BLAZE_Network"
+      ),
+  ],
+  [
+      InlineKeyboardButton(text="🔐 Help Cmd", callback_data="help_back"),
+      InlineKeyboardButton(
+          text="Chitchat 🚑", url=f"https://t.me/UNIQUE_SOCIETY"
+      ),
+  ],
+  [
+      InlineKeyboardButton(
+          text="➕ Add me to Group ➕", url="t.me/HYPERMEN_RBOT?startgroup=true"),
+  ],
+]
 
 HELP_STRINGS = """
-`Hi.. I'm` [Neko💜]("https://telegra.ph/file/85ce7f2dc743fb5c0c93a.jpg") 
-`Click on the buttons below to get about Cute Futures..`"""
+*Main* commands available:
+ ➛ /help: PM's you this message.
+ ➛ /help <module name>: PM's you info about that module.
+ ➛ /donate: information on how to donate!
+ ➛ /settings:
+   ❂ in PM: will send you your settings for all supported modules.
+   ❂ in a group: will redirect you to pm, with all that chat's settings.
+"""
 
-
-NEKO_IMG = "https://telegra.ph/file/8fa070dfa60da6c024ac3.mp4"
-
-DONATE_STRING = """Hey , If you want Donate means Give a Star ⭐ to this [Repo](https://GitHub.com/Hodacka/NekoRobot-2)"""
+DONATE_STRING = """❂ I'm Free for Everyone ❂"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -134,6 +134,8 @@ for module_name in ALL_MODULES:
 
     if imported_module.__mod_name__.lower() not in IMPORTED:
         IMPORTED[imported_module.__mod_name__.lower()] = imported_module
+    else:
+        raise Exception("Can't have two modules with the same name! Please change one")
 
     if hasattr(imported_module, "__help__") and imported_module.__help__:
         HELPABLE[imported_module.__mod_name__.lower()] = imported_module
@@ -174,6 +176,7 @@ def send_help(chat_id, text, keyboard=None):
     )
 
 
+@run_async
 def test(update: Update, context: CallbackContext):
     # pprint(eval(str(update)))
     # update.effective_message.reply_text("Hola tester! _I_ *have* `markdown`", parse_mode=ParseMode.MARKDOWN)
@@ -181,6 +184,7 @@ def test(update: Update, context: CallbackContext):
     print(update.effective_message)
 
 
+@run_async
 def start(update: Update, context: CallbackContext):
     args = context.args
     uptime = get_readable_time((time.time() - StartTime))
@@ -196,13 +200,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton(
-                                    text="BACK", callback_data="help_back"
-                                )
-                            ]
-                        ]
+                        [[InlineKeyboardButton(text="⬅️ BACK", callback_data="help_back")]]
                     ),
                 )
 
@@ -219,16 +217,8 @@ def start(update: Update, context: CallbackContext):
                 IMPORTED["rules"].send_rules(update, args[0], from_pm=True)
 
         else:
-            
-            
-            first_name = update.effective_user.first_name
             update.effective_message.reply_text(
-                PM_START_TEXT.format(
-                    escape_markdown(context.bot.first_name),
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),                        
+                PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
@@ -240,8 +230,7 @@ def start(update: Update, context: CallbackContext):
             ),
             parse_mode=ParseMode.HTML,
         )
-
-
+        
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
     # Log the error before we do anything else, so we can see it even if something breaks.
@@ -300,6 +289,7 @@ def error_callback(update: Update, context: CallbackContext):
         # handle all other telegram related errors
 
 
+@run_async
 def help_button(update, context):
     query = update.callback_query
     mod_match = re.match(r"help_module\((.+?)\)", query.data)
@@ -364,61 +354,180 @@ def help_button(update, context):
         pass
 
 
-def neko_about_callback(update, context):
+@run_async
+def Nao_about_callback(update, context):
     query = update.callback_query
-    if query.data == "neko_":
+    if query.data == "Nao_":
         query.message.edit_text(
-            text=""" hey I'm *Neko*, a Cute group management bot Created with Cuteness to help you manage your group easily.
-                 \n❍ I can restrict users.
-                 \n❍ I can greet users with customizable welcome messages and even set a group's rules.
-                 \n❍ I have an advanced anti-flood system.
-                 \n❍ I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc.
-                 \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
-                 \n❍ I check for admins' permissions before executing any command and more stuffs
-                 \n\n_shasa's licensed under the GNU General Public License v3.0_
-                 \nHere is the [💾Repository](https://github.com/Hodacka/NekoRobot-2).
-                 \n\nIf you have any question about *Neko*, let us know at .""",
+            text=""" ᴀ ᴘᴏᴡᴇʀғᴜʟ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ ʙᴜɪʟᴛ ᴛᴏ ʜᴇʟᴘ ʏᴏᴜ ᴍᴀɴᴀɢᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴇᴀsɪʟʏ
+            \nHere's the basic help regarding use of Hypermen robot.
+            
+            \nAlmost all modules usage defined in the help menu, checkout by sending `/help`
+            \nReport error/bugs click the Button""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="neko_back")]]
+                [
+                    [
+                        InlineKeyboardButton(
+                            text="💫 Sᴜᴘᴘᴏʀᴛ", url="t.me/HYPERMEN_SUPPORT"
+                        ),
+                        InlineKeyboardButton(
+                            text="✨ Uᴘᴅᴀᴛᴇ", url="t.me/HYPERMEN_UPDATES"
+                        ),
+                    ],
+                    [InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_back")],
+                ]
             ),
         )
-    elif first_name = update.effective_user.first_name
-            update.effective_message.reply_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),                        
+    elif query.data == "Nao_back":
+        query.message.edit_text(
+                PM_START_TEXT,
                 reply_markup=InlineKeyboardMarkup(buttons),
                 parse_mode=ParseMode.MARKDOWN,
                 timeout=60,
-            )
+                disable_web_page_preview=False,
+        )
+
+    elif query.data == "Nao_basichelp":
+        query.message.edit_text(
+            text=f"*Here's basic Help regarding* *How to use Me?*"
+            f"\n\n• Firstly Add {dispatcher.bot.first_name} to your group by pressing [here](http://t.me/{dispatcher.bot.username}?startgroup=true)\n"
+            f"\n• After adding promote me manually with full rights for faster experience.\n"
+            f"\n• Than send `/admincache @Hypermen_rBot` in that chat to refresh admin list in My database.\n"
+            f"\n\n*All done now use below given button's to know about use!*\n"
+            f"",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Aᴅᴍɪɴs⏳", callback_data="Nao_admin"),
+                    InlineKeyboardButton(text="Nᴏᴛᴇs 📝", callback_data="Nao_notes"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="⚡ Sᴜᴘᴘᴏʀᴛ", callback_data="Nao_support"),
+                    InlineKeyboardButton(text="🧰 Cʀᴇᴅɪᴛs ", callback_data="Nao_credit"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="🌹Bᴀᴄᴋ🌹", callback_data="Nao_back"),
+                 
+                 ]
+                ]
+            ),
+        )
+    elif query.data == "Nao_admin":
+        query.message.edit_text(
+            text=f"*Let's make your group bit effective now*"
+            f"\nCongragulations, HYPERMEN now ready to manage your group."
+            f"\n\n*Admin Tools*"
+            f"\nBasic Admin tools help you to protect and powerup your group."
+            f"\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
+            f"\n\n*Welcome*"
+            f"\nLets set a welcome message to welcome new users coming to your group."
+            f"send `/setwelcome [message]` to set a welcome message!",
+            parse_mode=ParseMode.MARKDOWN,
+            disable_web_page_preview=True,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Back", callback_data="Nao_basichelp")]]
+            ),
+        )
+    elif query.data == "Nao_notes":
+        query.message.edit_text(
+            text=f"<b> Setting up notes</b>"
+            f"\nYou can save message/media/audio or anything as notes"
+            f"\nto get a note simply use # at the beginning of a word"
+            f"\n\nYou can also set buttons for notes and filters (refer help menu)",
+            parse_mode=ParseMode.HTML,
+            reply_markup=InlineKeyboardMarkup(
+                [[InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_basichelp")]]
+            ),
+        )
+    elif query.data == "Nao_support":
+        query.message.edit_text(
+            text="* Hypermen support chats*"
+            "\nJoin Support Group/Channel",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Tғɴ Fᴏᴜɴᴅᴇʀ", url="t.me/yash_thakur_9"),
+                    InlineKeyboardButton(text="Tғɴ CᴏFᴏᴜɴᴅᴇʀ", url="t.me/Harsh_Pandit_xd"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Tғɴ Sᴜᴘᴘᴏʀᴛ", url="https://t.me/Furious_Support_Group"),
+                    InlineKeyboardButton(text="Tғɴ Uᴘᴅᴀᴛᴇ", url="https://t.me/THE_FURIOUSNETWORK"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_basichelp"),
+                 
+                 ]
+                ]
+            ),
+        )
+
+    elif query.data == "Nao_credit":
+        query.message.edit_text(
+            text=f"💫 Credis for TFN\n"
+            "\nHere Developers Making And Give Inspiration For Made The HypermenRobot",
+            parse_mode=ParseMode.MARKDOWN,
+            reply_markup=InlineKeyboardMarkup(
+                [
+                 [
+                    InlineKeyboardButton(text="Hᴀʀsʜ", url="https://t.me/harsh_Pandit_xd"),
+                    InlineKeyboardButton(text="Yᴀsʜ", url="https://t.me/YASH_THAKUR_9"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Eᴠɪʟ Bᴏʏ", url="https://t.me/evil_Xd_boy"),
+                    InlineKeyboardButton(text="Aɴᴅʏ", url="https://t.me/Its_pandit_boy"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Aʏᴀɴ", url="https://t.me/ayu6099"),
+                    InlineKeyboardButton(text="Tʜᴏʀ", url="https://t.me/Thor_0Z"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Dɪᴠʏᴀɴsʜ", url="https://t.me/THE_KING_IS_BACK78"),
+                    InlineKeyboardButton(text="Vɪᴊᴀʏ", url="https://t.me/MRVIJAYU1614"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Nɪsʜᴀɴᴛ", url="https://t.me/NISHANTT_XD"),
+                    InlineKeyboardButton(text="Asʜ ᴋɪɴɢ", url="https://t.me/Official_afk_xD"),
+                 ],
+                 [
+                    InlineKeyboardButton(text="Bᴀᴄᴋ", callback_data="Nao_"),
+                 ]
+                ]
+            ),
+        )
 
 
+@run_async
 def Source_about_callback(update, context):
     query = update.callback_query
     if query.data == "source_":
         query.message.edit_text(
-            text=""" Hi..💜 I'm *Neko*
-                 \nHere is the [Source Code](https://github.com/Hodacka/NekoRobot-2) .""",
+            text=""" Hi.. there I'm *Hypermen Robot*
+                 \nHere is the [Source Code](https://t.me/BLAZE_SUPPORT) .""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Go Back", callback_data="source_back")]]
+                [
+                 [
+                    InlineKeyboardButton(text="Go Back", callback_data="source_back")
+                 ]
+                ]
             ),
         )
     elif query.data == "source_back":
         query.message.edit_text(
-            PM_START_TEXT,
-            reply_markup=InlineKeyboardMarkup(buttons),
-            parse_mode=ParseMode.MARKDOWN,
-            timeout=60,
-            disable_web_page_preview=False,
+                PM_START_TEXT,
+                reply_markup=InlineKeyboardMarkup(buttons),
+                parse_mode=ParseMode.MARKDOWN,
+                timeout=60,
+                disable_web_page_preview=False,
         )
 
-
+@run_async
 def get_help(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     args = update.effective_message.text.split(None, 1)
@@ -449,10 +558,16 @@ def get_help(update: Update, context: CallbackContext):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="Hᴇʟᴘ ❔",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
-                    ]
+                    ],
+                    [
+                        InlineKeyboardButton(
+                            text="Sᴜᴘᴘᴏʀᴛ Cʜᴀᴛ",
+                            url="https://t.me/UNIQUE_SOCIETY".format(SUPPORT_CHAT),
+                        )
+                    ],
                 ]
             ),
         )
@@ -519,6 +634,7 @@ def send_settings(chat_id, user_id, user=False):
             )
 
 
+@run_async
 def settings_button(update: Update, context: CallbackContext):
     query = update.callback_query
     user = update.effective_user
@@ -602,6 +718,7 @@ def settings_button(update: Update, context: CallbackContext):
             LOGGER.exception("Exception in settings buttons. %s", str(query.data))
 
 
+@run_async
 def get_settings(update: Update, context: CallbackContext):
     chat = update.effective_chat  # type: Optional[Chat]
     user = update.effective_user  # type: Optional[User]
@@ -633,6 +750,7 @@ def get_settings(update: Update, context: CallbackContext):
         send_settings(chat.id, user.id, True)
 
 
+@run_async
 def donate(update: Update, context: CallbackContext):
     user = update.effective_message.from_user
     chat = update.effective_chat  # type: Optional[Chat]
@@ -642,7 +760,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1606221784 and DONATION_LINK:
+        if OWNER_ID != 2091736526 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -690,11 +808,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(
-                f"@{SUPPORT_CHAT}",
-                "[Yes I'm alive now!](https://telegra.ph/file/859785ead7c223f5d09b3.jpg)",
-                parse_mode=ParseMode.MARKDOWN,
-            )
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "Yess I'm alive ")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -702,30 +816,19 @@ def main():
         except BadRequest as e:
             LOGGER.warning(e.message)
 
-    test_handler = CommandHandler("test", test, run_async=True)
-    start_handler = CommandHandler("start", start, run_async=True)
+    test_handler = CommandHandler("test", test)
+    start_handler = CommandHandler("start", start)
 
-    help_handler = CommandHandler("help", get_help, run_async=True)
-    help_callback_handler = CallbackQueryHandler(
-        help_button, pattern=r"help_.*", run_async=True
-    )
+    help_handler = CommandHandler("help", get_help)
+    help_callback_handler = CallbackQueryHandler(help_button, pattern=r"help_.*")
 
-    settings_handler = CommandHandler("settings", get_settings, run_async=True)
-    settings_callback_handler = CallbackQueryHandler(
-        settings_button, pattern=r"stngs_", run_async=True
-    )
+    settings_handler = CommandHandler("settings", get_settings)
+    settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(
-        asuna_about_callback, pattern=r"asuna_", run_async=True
-    )
-    source_callback_handler = CallbackQueryHandler(
-        Source_about_callback, pattern=r"source_", run_async=True
-    )
-
-    donate_handler = CommandHandler("donate", donate, run_async=True)
-    migrate_handler = MessageHandler(
-        Filters.status_update.migrate, migrate_chats, run_async=True
-    )
+    about_callback_handler = CallbackQueryHandler(Nao_about_callback, pattern=r"Nao_")
+    source_callback_handler = CallbackQueryHandler(Source_about_callback, pattern=r"source_")
+    donate_handler = CommandHandler("donate", donate)
+    migrate_handler = MessageHandler(Filters.status_update.migrate, migrate_chats)
 
     # dispatcher.add_handler(test_handler)
     dispatcher.add_handler(start_handler)
@@ -751,7 +854,7 @@ def main():
 
     else:
         LOGGER.info("Using long polling.")
-        updater.start_polling(timeout=15, read_latency=4, drop_pending_updates=True)
+        updater.start_polling(timeout=15, read_latency=4, clean=True)
 
     if len(argv) not in (1, 3, 4):
         telethn.disconnect()
