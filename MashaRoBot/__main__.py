@@ -82,26 +82,26 @@ PM_START_TEXT = """
 """
 buttons = [
     [
-        InlineKeyboardButton(text="🔰 Aʙᴏᴜᴛ ", callback_data="Nao_"),
+        InlineKeyboardButton(text="🔰 About ", callback_data="masha_"),
         InlineKeyboardButton(
-            text="📝 Bᴀsɪᴄ Hᴇʟᴘ", callback_data="Nao_basichelp"
+            text="Basic help ❔", callback_data="masha_basichelp"
         ),
     ],
     [
-        InlineKeyboardButton(text="🎇 Uᴘᴅᴀᴛᴇ", url=f"https://t.me/THE_FURIOUSNETWORK"),
+        InlineKeyboardButton(text="🚑 Support", url=f"https://t.me/BLAZE_SUPPORT"),
       InlineKeyboardButton(
-          text="⚙️ Sᴜᴘᴘᴏʀᴛ", url=f"https://t.me/UNIQUE_SOCIETY"
+          text="Updates 📨", url=f"https://t.me/the_BLAZE_Network"
       ),
   ],
   [
-      InlineKeyboardButton(text="🔐 Hᴇʟᴘ Cᴍᴅ", callback_data="help_back"),
+      InlineKeyboardButton(text="🔐 Help Cmd", callback_data="help_back"),
       InlineKeyboardButton(
-          text="🏜️ Tғɴ Cʜᴀᴛ ", url=f"https://t.me/LOVE_X_POISON"
+          text="Chitchat 🚑", url=f"https://t.me/UNIQUE_SOCIETY"
       ),
   ],
   [
       InlineKeyboardButton(
-          text="➕Aᴅᴅ Mᴇ Yᴏᴜʀ Gʀᴏᴜᴘ➕", url="t.me/HYPERMEN_RBOT?startgroup=true"),
+          text="➕ Add me to Group ➕", url="t.me/HYPERMEN_RBOT?startgroup=true"),
   ],
 ]
 
